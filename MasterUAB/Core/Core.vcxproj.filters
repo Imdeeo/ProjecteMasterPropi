@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DebugHelper.cpp" />
+    <ClCompile Include="DebugHelperImplementation.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="InputManagerImplementation.cpp" />
+    <ClCompile Include="UABEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DebugHelper.h" />
+    <ClInclude Include="DebugHelperImplementation.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="InputManagerImplementation.h" />
+    <ClInclude Include="UABEngine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{edf2ed55-ae70-4aa7-a367-c27cd882dd51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
