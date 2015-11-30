@@ -1,27 +1,18 @@
-#ifndef STATIC_MESH_H
-#define STATIC_MESH_H
-
-#include "Named.h"
-#include <vector>
+#pragma once
 #include <string>
-
-class CRenderableVertexs;
-class CMaterial;
-
-class CRenderManager;
-
-class CStaticMesh :	public CNamed
+#include <vector>
+class CStatciMeshes
 {
 protected:
+	std::string 
 	std::vector<CRenderableVertexs*> m_RVs;
 	std::vector<CMaterial *> m_Materials;
 	unsigned int m_NumVertexs, m_NumFaces;
 public:
-	CStaticMesh();
-	~CStaticMesh();
+	CStatciMeshes();
+	~CStatciMeshes();
 	bool Load (const std::string &FileName);
 	bool Reload ();
 	void Render (CRenderManager *RM) const;
 };
 
-#endif //STATIC_MESH_H

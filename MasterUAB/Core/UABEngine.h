@@ -5,6 +5,7 @@
 #include "MaterialManager.h"
 #include "TextureManager.h"
 #include "RenderManager.h"
+#include "ContextManager.h"
 
 class CUABEngine
 {
@@ -14,6 +15,7 @@ class CUABEngine
 	UAB_BUILD_GET_SET(CEffectManager *, EffectManager)
 	UAB_BUILD_GET_SET(CTextureManager *, TextureManager)
 	UAB_BUILD_GET_SET(CRenderManager *, RenderManager)
+	UAB_BUILD_GET_SET(CContextManager*, ContextManager)
 
 	static CUABEngine * m_Instance;
 	
@@ -27,4 +29,5 @@ public:
 	void Init();
 };
 
+#define UABEngine (*(CUABEngine::GetInstance()))
 #endif //MI_PUTO_ENGINE_H

@@ -76,9 +76,9 @@ void CRenderManager::Render(CContextManager* _Context, CMaterialManager* _Materi
 		for (int j = 0; j < l_RenderableObject->GetNumSubmeshes(); ++j)
 		{
 			const CRenderableObject::SSubmesh& l_Submesh = l_RenderableObject->GetSubmesh(j);
-			const CMaterial* l_Material = _MaterialManager->GetMaterial(l_Submesh.material);
+			const CMaterial* l_Material = _MaterialManager->GetResource(l_Submesh.material);
 			// TODO no pintar el objeto, sino añadirlo a la lista l_SubmeshesWithBlend si tiene blend
-			if(l_Material->HasBlending())
+			if(l_Material->GetEffectTechnique())
 			{
 				struct BlendedSubmesh _BlendedSubmesh;
 				_BlendedSubmesh.material = l_Material;
@@ -90,8 +90,8 @@ void CRenderManager::Render(CContextManager* _Context, CMaterialManager* _Materi
 			}
 			else
 			{
-				l_Material->SetShaderParameters(_Context);
-				_Context->Draw(l_Submesh.vertices, l_Material->GetRasterizerState(), l_Material->GetDepthStencilState(), l_Material->GetBlendState());
+				//l_Material-> SetShaderParameters(_Context);
+				//_Context->Draw(l_Submesh.vertices, l_Material->GetRasterizerState(), l_Material->GetDepthStencilState(), l_Material->GetBlendState());
 			}
 		}
 	}
@@ -119,9 +119,9 @@ void CRenderManager::Render(CContextManager* _Context, CMaterialManager* _Materi
 	for (int i = 0; i < l_SubmeshesWithBlend.size(); ++i)
 	{
 		BlendedSubmesh l_BlendedSubmesh = l_SubmeshesWithBlend[i];
-		l_BlendedSubmesh.material->SetShaderParameters(_Context);
+		//l_BlendedSubmesh.material->SetShaderParameters(_Context);
 		_Context->SetWorldMatrix(l_BlendedSubmesh.world);
-		_Context->Draw(l_BlendedSubmesh.vertices, l_BlendedSubmesh.material->GetRasterizerState(), l_BlendedSubmesh.material->GetDepthStencilState(), l_BlendedSubmesh.material->GetBlendState());
+		//_Context->Draw(l_BlendedSubmesh.vertices, l_BlendedSubmesh.material->GetRasterizerState(), l_BlendedSubmesh.material->GetDepthStencilState(), l_BlendedSubmesh.material->GetBlendState());
 	
 	}
 

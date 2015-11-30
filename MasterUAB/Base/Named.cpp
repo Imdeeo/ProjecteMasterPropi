@@ -1,6 +1,12 @@
 #include "Named.h"
 #include "XML\XMLTreeNode.h"
+#include "assert.h"
 
+
+CNamed::CNamed()
+{
+	assert(!"This method mustn't be called");
+}
 
 CNamed::CNamed(const CXMLTreeNode &TreeNode)
 {

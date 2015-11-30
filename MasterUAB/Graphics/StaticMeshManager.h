@@ -8,7 +8,7 @@
 class CStaticMeshManager :	public CTemplatedMapManager<CStaticMesh>
 {
 private:
-	std::string m_Filename
+	std::string m_Filename;
 public:
 	CStaticMeshManager(void);
 	virtual ~CStaticMeshManager(void);

@@ -5,7 +5,6 @@
       <Filter>ContextManager</Filter>
     </ClCompile>
     <ClCompile Include="DebugRender.cpp" />
-    <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="Texture.cpp">
       <Filter>Texture</Filter>
     </ClCompile>
@@ -54,6 +53,12 @@
     <ClCompile Include="StaticMesh.cpp">
       <Filter>StaticMesh</Filter>
     </ClCompile>
+    <ClCompile Include="InstanceMesh.cpp">
+      <Filter>StaticMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>RenderManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ContextManager">
@@ -80,14 +85,15 @@
     <Filter Include="StaticMesh">
       <UniqueIdentifier>{3be6c0a7-cfa8-4b68-a643-c291d3311b4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RenderManager">
+      <UniqueIdentifier>{141a92e6-1fce-4b91-b0c9-a9b37f4c90a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ContextManager.h">
       <Filter>ContextManager</Filter>
     </ClInclude>
     <ClInclude Include="DebugRender.h" />
-    <ClInclude Include="VertexTypes.h" />
-    <ClInclude Include="RenderManager.h" />
     <ClInclude Include="Texture.h">
       <Filter>Texture</Filter>
     </ClInclude>
@@ -149,18 +155,30 @@
     <ClInclude Include="StaticMesh.h">
       <Filter>StaticMesh</Filter>
     </ClInclude>
+    <ClInclude Include="InstanceMesh.h">
+      <Filter>StaticMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>RenderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexTypes.h">
+      <Filter>RenderableObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Graphics.rc" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="UAB_POSITION_NORMAL_TEXTURE_VERTEXShader.fx">
-      <Filter>Effects</Filter>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Globals.fxh">
       <Filter>Effects</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="UAB_POSITION_NORMAL_TEXTURE_VERTEXShader.fx">
+      <Filter>Effects</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

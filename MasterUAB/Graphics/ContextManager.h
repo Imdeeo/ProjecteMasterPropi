@@ -1,8 +1,10 @@
-#pragma once
+#ifndef CONTEXT_MANAGER_H
+#define CONTEXT_MANAGER_H
 
 #include <d3d11.h>
+#include <Math\Color.h>
 
-#include "Effects.h"
+#include "EffectParameters.h"
 #include "Camera.h"
 
 class CRenderableVertexs;
@@ -94,3 +96,4 @@ private:
 	ID3D11BlendState* m_BlendStates[BLEND_COUNT];
 };
 
+#endif //CONTEXT_MANAGER_H

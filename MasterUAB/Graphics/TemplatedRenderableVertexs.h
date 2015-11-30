@@ -1,5 +1,6 @@
 #include <d3d11.h>
 #include "RenderableVertexs.h"
+#include "UABEngine.h"
 
 template<class T>
 class CTemplatedRenderableVertexs : public CRenderableVertexs
@@ -24,8 +25,7 @@ public:
 		D3D11_SUBRESOURCE_DATA InitData;
 		ZeroMemory( &InitData, sizeof(InitData) );
 		InitData.pSysMem = Vtxs;
-		ID3D11Device *l_Device=UABEngine.GetRenderManager().GetDevice();
-		ID3D11Device *l_Device;
+		ID3D11Device *l_Device=UABEngine.GetRenderManager()->GetDevice();
 		HRESULT l_HR=l_Device->CreateBuffer(&l_BufferDescription, &InitData,
 		&m_VertexBuffer);
 		if(FAILED(l_HR))
@@ -41,7 +41,8 @@ public:
 		CEffectPixelShader *l_EffectPixelShader=EffectTechnique->GetPixelShader();
 		if(l_EffectPixelShader==NULL || l_EffectVertexShader==NULL)
 			return false;
-		ID3D11DeviceContext *l_DeviceContext=RenderManager->GetDeviceContext();
+		ID3D11DeviceContext *l_DeviceContext;
+		RenderManager->GetDevice()->GetImmediateContext(&l_DeviceContext);
 		UINT stride=sizeof(T);
 		UINT offset=0;
 		l_DeviceContext->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);

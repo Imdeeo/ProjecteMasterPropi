@@ -3,9 +3,11 @@
 #include "Camera.h"
 #include "Frustum.h"
 #include "RenderableObject.h"
+#include "Utils.h"
+#include "ContextManager.h"
 
-class CContextManager;
 class CMaterialManager;
+
 
 class CRenderManager
 {
@@ -33,6 +35,13 @@ private:
 
 	size_t m_CurrentRenderlistLength;
 	std::vector<const CRenderableObject*> m_RenderableObjects;
+
+	UAB_BUILD_GET_SET(CContextManager*,ContextManager);
+
+	ID3D11Device* GetDevice()
+	{
+		return m_ContextManager->GetDevice();
+	}
 
 };
 

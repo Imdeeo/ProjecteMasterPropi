@@ -2,15 +2,16 @@
 //
 
 #include "stdafx.h"
-#include "Enemies\EnemyManager.h"
+#include "StaticMesh.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CEnemyManager l_EnemyManager;
-	l_EnemyManager.Load("./data/enemies.xml");
-
-	l_EnemyManager.Update(0.0f);
-	l_EnemyManager.Render();
+	CStaticMesh statmesh;
+	bool loaded = statmesh.Load("Data\\Level\\Meshes\\Box001.mesh");
+	if (loaded)
+		printf("loaded");
+	else
+		printf("caca");
 	return 0;
 }
 
